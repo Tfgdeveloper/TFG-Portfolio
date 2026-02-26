@@ -3,21 +3,39 @@ import React from 'react'
 import DualStateButton2 from '../components/DualStateButton2'
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedHeading from '../components/AnimatedHeading';
+import CustomCursor from '../components/CustomCursor';
+import LogoLoop from '../components/LogoLoop';
+import { Tabs, TabSection } from '../components/TabSection';
+import TabsCard from '../components/TabsCard';
+import ServicesSection from '../components/ServicesSection';
+import PortfolioTabs from '../components/PortfolioTabs';
 
-
+const logos = [
+  { id: 1, name: 'Logo1', src: 'images/logo.svg' },
+  { id: 2, name: 'Logo2', src: 'images/logo2.svg' },
+  { id: 3, name: 'Logo3', src: 'images/logo3.svg' },
+  { id: 4, name: 'Logo4', src: 'images/logo4.svg' },
+  { id: 5, name: 'Logo5', src: 'images/logo5.svg' },
+];
 const Home = () => {
+    const handleSearch = (query) => {
+    console.log('Searching:', query);
+    // Add your search logic here
+  };
   return (
     <div>
-     
+     <CustomCursor />
       
        <motion.div
+        data-cursor="TFG Solution" 
+        data-cursor-variant="view"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5 ,  }}
         className="relative"
         >
         <div className='relative w-screen h-[850px] md:px-[40px] px-[20px]  flex flex-col justify-between items-center '>
-             <img src='images/shadow.png'className='w-full h-auto absolute md:-bottom-25 -bottom-5'/>
+             <img src='images/shadow.png'className='w-full h-auto absolute md:-bottom-45 -bottom-5'/>
              <img src='images/squars.png'className='hidden md:flex w-auto md:h-full absolute -top-23'/>
              <img src='images/mobilesquars.png'className='md:hidden flex w-auto h-full absolute -top-23'/>
             <div className=" relative h-full w-full max-w-[1440px] mx-auto border-x-[2px] border-[#535353]">
@@ -52,7 +70,7 @@ const Home = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.75 ,  }}
-                    src="images/joinus.png" 
+                    src="images/Frame 1618872631.svg" 
                     className="hidden md:flex float-animation absolute left-25 top-2/5"
                 />
                 <motion.img 
@@ -159,17 +177,84 @@ const Home = () => {
 
         </div>
 
-      </motion.div>
-      <section className="w-full h-[100px] border-y-[2px] border-[#535353] ">
-        
-        
-        <div className='w-full h-full mx-auto max-w-[1440px] flex flex-col justify-between items-center '>
+       </motion.div>
+
+
+       <motion.div
+        data-cursor="TFG Solution" 
+        data-cursor-variant="view"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.5 ,  }}
+        className="relative w-full border-y-[2px] border-[#535353] px-[40px]"
+        >
+            <div className="relative max-w-[1440px] mx-auto py-[30px] ">
+            <LogoLoop logos={logos} speed={30} />
+            <img 
+                    src="images/Frame.png" 
+                    className="absolute -bottom-[12.75px] -left-[12.75px] z-20"
+                />
+                <img 
+                    src="images/Frame.png" 
+                    className="absolute -bottom-[12.75px] -right-[12.75px] z-20"
+                />
+            </div>
+       </motion.div>
+
+
+       <motion.div
+        data-cursor="Our services" 
+        data-cursor-variant="view"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, delay: 0.5 ,  }}
+        className="relative w-full py-[60px]  px-[20px] md:px-[40px]"
+        >
+            <div className="relative max-w-[1440px] mx-auto flex flex-col gap-[70px] ">
+             <AnimatedHeading
+                    segments={[
+                        { text: "One System Smarter" },
+                        { text: "Growth.", highlight: true, animateBy: 'characters', delay: 100 },
+                        
+                    ]}
+                    baseClassName="text-[48px] md:text-[56px] text-white text-center leading-[110px]"
+                    />      
+             <ServicesSection/>
             
-       
+            </div>
+       </motion.div>
 
-        </div>
+       <motion.div
+        data-cursor="Featured work" 
+        data-cursor-variant="view"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, delay: 0.5 ,  }}
+        className="relative w-full py-[60px]  px-[20px] md:px-[40px]"
+        >
+            <div className="relative max-w-[1440px] mx-auto flex flex-col gap-[70px] ">
+             <AnimatedHeading
+                    segments={[
+                        { text: "Our Featured" },
+                        { text: "Work", highlight: true, animateBy: 'characters', delay: 100 },
+                        
+                    ]}
+                    baseClassName="text-[48px] md:text-[56px] text-white text-center leading-[110px]"
+                    />      
+             <div className='relative flex flex-col'>
+             <PortfolioTabs/>
+      </div>
 
-      </section>
+      {/* Example 2: Different Content Types */}
+      
+             
+            
+            </div>
+       </motion.div>
+      
     </div>
   )
 }

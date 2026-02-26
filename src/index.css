@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* If using Lenis or similar, disable native smooth scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+@layer base {
+  body,
+  a,
+  button,span {
+    cursor: url('/images/cursor2.png') 16 16, auto !important;
+  }
+}
+
 @font-face {
   font-family: 'Fellix';
   src: url('./assets/fonts/Fellix-TRIAL-Medium.otf') format('opentype');
@@ -19,6 +40,12 @@ body {
   margin: 0;
   background-color: #0A0A0A;
   overflow-x: hidden;
+  cursor: url('/images/cursor2.png') 16 16, auto;
+}
+
+a,
+button {
+  cursor: url('/images/cursor-hover.png') 16 16, pointer!important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -146,4 +173,53 @@ transition: all 0.3s ease;
   100% {
     transform: translateY(0px);
   }
+}
+
+.servicescard{
+background: #535353;
+
+}
+.servicescard:hover{
+background: conic-gradient(from 102deg at 52.75% 38.75%, rgba(64, 64, 64, 0.25) 10.520626902580261deg, rgba(64, 64, 64, 0.17) 32.12122321128845deg, rgba(255, 255, 255, 0.25) 60.28126358985901deg, rgba(255, 255, 255, 0.25) 107.78769135475159deg, rgba(64, 64, 64, 0.17) 187.59080171585083deg, rgba(249, 249, 249, 0.50) 207.57991075515747deg, rgba(255, 255, 255, 0.25) 287.30769395828247deg, rgba(249, 249, 249, 0.25) 327.04745292663574deg);
+box-shadow: -20px 68px 20px 0 rgba(0, 0, 0, 0.00), -13px 43px 18px 0 rgba(0, 0, 0, 0.01), -7px 24px 15px 0 rgba(0, 0, 0, 0.04), -3px 11px 11px 0 rgba(0, 0, 0, 0.07), -1px 3px 6px 0 rgba(0, 0, 0, 0.08);
+backdrop-filter: blur(7.5px);
+}
+
+.servicesinner{
+background: none;
+
+}
+.servicesinner:hover{
+background: rgba(255, 255, 255, 0.10);
+
+
+filter: drop-shadow(-1px 3px 6px rgba(0, 0, 0, 0.08))
+        drop-shadow(-3px 11px 11px rgba(0, 0, 0, 0.07))
+        drop-shadow(-7px 24px 15px rgba(0, 0, 0, 0.04))
+        drop-shadow(-13px 43px 18px rgba(0, 0, 0, 0.01))
+        drop-shadow(-20px 68px 20px rgba(0, 0, 0, 0.00));
+
+backdrop-filter: blur(7.5px);
+-webkit-backdrop-filter: blur(7.5px);
+
+}
+
+.tabscard{
+background: conic-gradient(from 102deg at 52.75% 38.75%, rgba(64, 64, 64, 0.25) 10.520626902580261deg, rgba(64, 64, 64, 0.17) 32.12122321128845deg, rgba(255, 255, 255, 0.25) 60.28126358985901deg, rgba(255, 255, 255, 0.25) 107.78769135475159deg, rgba(64, 64, 64, 0.17) 187.59080171585083deg, rgba(249, 249, 249, 0.50) 207.57991075515747deg, rgba(255, 255, 255, 0.25) 287.30769395828247deg, rgba(249, 249, 249, 0.25) 327.04745292663574deg);
+box-shadow: -20px 68px 20px 0 rgba(0, 0, 0, 0.00), -13px 43px 18px 0 rgba(0, 0, 0, 0.01), -7px 24px 15px 0 rgba(0, 0, 0, 0.04), -3px 11px 11px 0 rgba(0, 0, 0, 0.07), -1px 3px 6px 0 rgba(0, 0, 0, 0.08);
+backdrop-filter: blur(7.5px);
+}
+.tabsinner{
+background: rgba(255, 255, 255, 0.10);
+
+
+filter: drop-shadow(-1px 3px 6px rgba(0, 0, 0, 0.08))
+        drop-shadow(-3px 11px 11px rgba(0, 0, 0, 0.07))
+        drop-shadow(-7px 24px 15px rgba(0, 0, 0, 0.04))
+        drop-shadow(-13px 43px 18px rgba(0, 0, 0, 0.01))
+        drop-shadow(-20px 68px 20px rgba(0, 0, 0, 0.00));
+
+backdrop-filter: blur(7.5px);
+-webkit-backdrop-filter: blur(7.5px);
+
 }
