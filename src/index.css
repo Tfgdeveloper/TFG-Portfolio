@@ -1,7 +1,27 @@
 @import "tailwindcss";
+.servicescard,
+.tabscard,
+.tabsinner,
+.group {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
 
+/* Reduce paint areas */
+.relative {
+  contain: layout style paint;
+}
+
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Prevent layout shifts */
+img {
+  height: auto;
+  max-width: 100%;
 }
 
 /* If using Lenis or similar, disable native smooth scroll */
